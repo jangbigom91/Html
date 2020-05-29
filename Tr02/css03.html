@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 + CSS3</title>
+    <style>
+        /* 아이디 선택자 - #아이디 */
+        #header {
+            width: 800px;
+            margin: 0 auto;
+            background: red;
+        }
+
+        #wrap {
+            width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #aside {
+            width: 200px;
+            float: left;
+            background: blue;
+        }
+
+        #content {
+            width: 600px;
+            float: left;
+            background: green;
+        }
+
+        /* 클래스 선택자 - .클래스 */
+        .select {color: red;}
+
+        /* 속성 선택자 - input[type=text, password....] 태그에 많이 사용 */
+        input[type=text] {background: red;}
+        input[type=password] {background: blue;}
+
+        /* 후손  선택자 - 선택자A 선택자B */
+        #header h1 {color: red;}
+        #section h1 {color: orange;}
+
+        /* 자손 선택자 - 선택자A > 선택자B */
+        #header > h1 {color:red;}
+        #section > h1 {color: orange;}    
+
+        /* 반응 선택자 - 마우스로 클릭할때 active, 태그위에 마우스를 올리면 hover */
+        h1:hover {color:pink;}
+        h1:active{color:blueviolet;}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>Header</h1>
+    </div>
+    <div id="wrap">
+        <div id="aside">
+            <h1>Aside</h1>
+        </div>
+        <div id="content">
+            <h1>Content</h1>
+        </div>
+    </div>
+
+    <ul>
+        <li class="select">Lorem ipsum</li>
+        <li>Lorem ipsum</li>
+        <li class="select">Lorem ipsum</li>
+        <li>Lorem ipsum</li>
+    </ul>
+
+    <form>
+        <input type="text" />
+        <input type="password" />
+    </form>
+
+    <div id="header">
+        <h1 class="title">Lorem ipsum</h1>
+        <div id="nav">
+            <h1>Navigation</h1>
+        </div>
+    </div>
+    <div id="section">
+        <h1 class="title">Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+
+    <h1>User Action Selector</h1>
+</body>
+</html>
