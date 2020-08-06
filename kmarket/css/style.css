@@ -439,7 +439,6 @@ main > section > section > article .dis_price > span {
     background: url('../img/ico_freeshipping.gif') no-repeat;
 }
 
-
 /* 슬라이더 영역 */
 main > section > .slider {
     width: 100%;
@@ -535,7 +534,7 @@ footer p > strong {
 }
 
  /* shop 공통 */
- main > section > nav {
+main > section > nav {
     width: 100%;
     height: 36px;
     border-bottom: 1px solid #000;
@@ -596,7 +595,6 @@ h5.rating.star5 {background-position: 0 -200px;}
     background: url('../img/ico_power_dealer.gif') no-repeat, url('../img/ico_great_seller.gif') no-repeat 63px;
     width: 160px;
 }
-
 
 /* list페이지 */
 #list {
@@ -750,4 +748,347 @@ h5.rating.star5 {background-position: 0 -200px;}
 #list > .paging > .num > a.on {
     color: #fe434c;
     font-weight: bold;
+}
+
+/* 뷰 영역 */
+
+#view {
+    float: right;
+    width: 985px;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#view > nav {
+    display: block;
+    width: 100%;
+    height: 36px;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+}
+#view > nav > h1 {    
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: 'Noto Sans KR', dotum, sans-serif;
+    padding: 0 0 7px;
+    line-height: 1em;
+}
+#view > nav > p {float: right; margin-top: 10px;}
+#view > nav > p > strong {font-weight: bold;}
+#view > section { margin-top: 10px;}
+#view > section > article { width: 100%; box-sizing: border-box;}
+#view > section > .info > div {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#view > section > .info > .image > img {width: 100%;}
+#view > section > .info > .summary > {font-family: 'Noto Sans KR', dotum, sans-serif;}
+#view > section > .info > .summary > nav {
+    display: block;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+#view > section > .info > .summary > nav > h1 {
+    float: left;
+    color: #1e2732;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+#view > section > .info > .summary > nav > h2 {
+    float: right;
+    color: #777;
+    margin-top: 8px;
+}
+#view > section > .info > .summary > p {
+    font-size: 18px;
+    color: #474747;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+#view > section > .info > .summary > nav > .rating {
+    width: 150px;
+    height: 20px;
+    font-size: 0px;
+    background-image: url(../img/ico_rating_star.png);
+    background-repeat: no-repeat;
+    background-position: 36px 0px;
+    text-indent: 86px;}
+#view > section > .info > .summary > nav > .rating.star4 {background-position: 0 -160px;}
+#view > section > .info > .summary > nav > h5 > a {
+    color: #346aff;
+    font-family: 'Malgun Gothic', dotum, sans-serif;
+    text-decoration: underline;
+}
+
+#view .info > .summary .org_price > del {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    color: #aaa;
+    text-decoration: line-through;
+}
+
+#view .info > .summary .org_price > span {
+    color: #eb000a;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    margin-left: 6px;
+}
+
+#view .info > .summary .dis_price > ins {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#view .info > .summary .delivery {
+    font-size: 16px;
+    color: #2e8de5;
+}
+
+#view .info > .summary .arrival {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+#view .info > .summary .desc {
+    display: block;
+    color: #aaa;
+}
+
+#view .info > .summary .cardfree > i {
+    background-position: -126px 0;
+}
+
+#view .info > .summary .card > i {
+    display: inline-block;
+    width: 30px;
+    height: 18px;
+    top: 4px;
+    background-image: url(../img/sp_icon.png);
+    font-size: 0;
+    vertical-align: text-top;
+    margin-right: 2px;
+}
+
+#view .info > .summary .cardadd > i {
+    background-position: -51px -21px;
+}
+
+#view .info > .summary .card > i {
+    display: inline-block;
+    width: 30px;
+    height: 18px;
+    top: 4px;
+    background-image: url(../img/sp_icon.png);
+    font-size: 0;
+    vertical-align: text-top;
+    margin-right: 2px;
+}
+
+#view .info > .summary .origin {font-size: 16px;}
+
+#view .info > .summary .banner {
+    width: 100%;
+}
+
+#view .info > .summary .total {
+    overflow: hidden;
+    margin-top: 16px;
+}
+
+#view .info > .summary .total > span {
+    float: right;
+    display: inline-block;
+    line-height: 38px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-align: right;
+    letter-spacing: -0.5px;
+}
+
+#view .info > .summary .total > em {
+    float: right;
+    display: block;
+    width: 100px;
+    height: 22px;
+    padding: 10px 0 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #5e636d;
+    letter-spacing: -1px;
+}
+
+#view article > nav {
+    border-bottom: 1px solid #a4a9b0;
+    padding: 6px 0;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+#view article > nav > h1 {
+    float: left;
+    font-family: 'Noto Sans KR', dotum, sans-serif;
+    color: #1e2732;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+#view article > nav > p {
+    float: left;
+    color: #777;
+    font-family: 'Noto Sans KR', dotum, sans-serif;
+    margin-top: 6px;
+    margin-left: 6px;
+}
+
+#view .notice > table {
+    width: 100%;
+}
+
+#view .notice > table > tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+#view .notice > table > tbody> tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+#view .notice > table tr > td {
+    padding: 5px 0 6px 21px;
+    font-size: 14px;
+    color: #777;
+    font-family: 'Noto Sans KR', dotum, sans-serif;
+}
+
+#view .notice > table tr > td:nth-child(1) {
+    width: 20%;
+    color: #222;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+#view .notice > .notice {
+    margin: 20px 0;
+    padding: 21px 26px 20px 19px;
+    line-height: 20px;
+    font-size: 14px;
+    font-family: 'Noto Sans KR', dotum, sans-serif;
+    color: #757c8a;
+    background: #fafafa;
+    border-radius: 2px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#view .review * {
+    font-family: 'Noto Sans KR', dotum, sans-serif;
+}
+
+#view article > nav {
+    border-bottom: 1px solid #a4a9b0;
+    padding: 6px 0;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+#view article > nav > h1 {
+    float: left;
+    color: #1e2732;
+    font-weight: bold;
+    font-size: 1.5em;
+
+}
+
+#view .review > ul {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#view .review > ul > li {
+    padding-top: 16px;
+    border-bottom: 1px solid #ececec;
+    box-sizing: border-box;
+}
+
+#view .review > ul > li > div {
+    overflow: hidden;
+}
+
+#view .review > ul > li > div > h5 {
+    float: left;
+}
+
+#view .review > ul > li > div > span {
+    float: right;
+    color: #555;
+}
+
+#view .review > ul > li > h3 {
+    color: #555;
+    margin-top: 6px;
+}
+
+#view .review > ul > li > p {
+    width: 100%;
+    height: 60px;
+    color: #555;
+    font-size: 14px;
+    line-height: 19px;
+    word-break: break-all;
+    margin-top: 10px;
+}
+
+
+#view .review > .paging {
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+}
+
+#view .review > .paging > span > a {
+    color: rgb(119, 119, 119);
+    font-family: 돋움, Dotum, Tahoma, sans-serif;
+    font-size: 11px;
+    letter-spacing: -1px;
+}
+
+#view .review > .paging > .num > a.on {
+    color: #fe434c;
+    font-weight: bold;
+}
+
+#view .review > .paging > .num > a {
+    display: inline-block;
+    min-width: 14px;
+    margin: 0 2px;
+    padding: 8px 9px;
+    border: 1px solid #c4c4c4;
+    background: url() 0 0 repeat-x;
+    color: #000;
+    font-family: Tahoma;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
 }
