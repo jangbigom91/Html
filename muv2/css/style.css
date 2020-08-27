@@ -1384,6 +1384,9 @@ main > #order {
 /* shop - oreder-complete */
 main > #order-complete {}
 #order-complete > section {}
+#order-complete > nav > h1 {
+    margin-top: 10px;
+}
 #order-complete > section > div {}
 #order-complete > section > div > h2 {
   font-size: 32px;
