@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>맨유::admin</title>
+    <title>맨유::register-product</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="./js/admin.js"></script>
@@ -10,7 +10,274 @@
     <link rel="stylesheet" href="../css/admin.css">
 </head>
 <style>
+/* register-product */
+#content {
+    min-height: 750px;
+    padding: 0 40px 40px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+html:lang(ko) .headingArea {padding-top: 20px;}
+.headingArea {
+    position: relative;
+    margin: 0 0 38px;
+}
+.mTitle {
+    position: relative;
+    margin: 40px 0 14px;
+}
+.headingArea h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.mTitle h1 {color: #2e3039;}
+.mTitle .btnManual {margin-top: -1px;}
 
+html:lang(ko) .headingArea .mBreadcrumb {
+    top: 20px;
+    left: 0px;
+}
+.mBreadcrumb {
+    position: absolute;
+    top: -20px;
+}
+.mBreadcrumb li {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 0 6px;
+    color: #969daa;
+    font-size: 13px;
+    line-height: 19px;
+}
+.mBreadcrumb li:not(:first-child)::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin: -2px 10px 0 0;
+    vertical-align: middle;
+    border: solid #a3a9b5;
+    border-width: 0 1px 1px 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.mBreadcrumb li.now {
+    color: #2a3954;
+    text-decoration: underline;
+}
+
+.headingArea .mAdBanner {
+    position: absolute;
+    right: 0;
+    top: 48px;
+    border-radius: 30px;
+}
+.mAdBanner {overflow: hidden;}
+img {
+    border: 0;
+    vertical-align: top;
+}
+.mAdBanner img {max-width: 100%;}
+
+.mToggleBar {
+    margin: 0 0 -1px 0;
+    height: 50px;
+    box-sizing: border-box;
+}
+.mToggleBar.selected {
+    border: 1px solid #787d8f;
+    background-color: #8b93a9;
+}
+.mToggleBar.selected h2 {color: #fff;}
+.mToggleBar h2 {
+    float: left;
+    padding: 13px 0 0 20px;
+    font-size: 16px;
+    font-weight: normal;
+}
+.mToggleBar .ctr1 {
+    float: right;
+    height: 100%;
+    line-height: 48px;
+}
+.mToggleBar .ctr1 span {
+    display: inline-block;
+    height: 100%;
+    vertical-align: top;
+}
+.mToggleBar.selected .ctr1 button {border-color: #787d8f;}
+.mToggleBar .ctr1 button {
+    display: inline-block;
+    position: relative;
+    overflow: visible;
+    width: 49px;
+    height: 100%;
+    font-size: 1px;
+    line-height: 0;
+    color: transparent;
+    text-indent: -150%;
+    vertical-align: top;
+    border-left: 1px solid #98989b;
+}
+.mToggleBar.selected .ctr1 button::before {
+    margin-top: -2px;
+    border-color: #fff;
+    -webkit-transform: rotate(-135deg);
+}
+.mToggleBar .ctr1 button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 13px;
+    height: 13px;
+    margin: -9px 0 0 -6px;
+    border-right: 1px solid #7c7c7c;
+    border-bottom: 1px solid #7c7c7c;
+    vertical-align: middle;
+}
+.mToggleBar::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.mToggleBar.selected + .toggleArea {
+    padding: 30px 20px;
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 0px 20px 1px 0px rgba(205, 211, 222, 1);
+}
+.mBoard table {border-top: 1px solid #dedede;}
+table {
+    table-layout: fixed;
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.mBoard table {
+    line-height: 1.5;
+    background-color: #fff;
+}
+caption {
+    overflow: hidden;
+    width: 1px;
+    font-size: 1px;
+    line-height: 0;
+    text-indent: 150%;
+    white-space: nowrap;
+}
+colgroup {display: table-column-group;}
+col {display: table-column;}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.mBoard tbody th {
+    border: 1px solid #dedede;
+    text-align: left;
+    word-break: keep-all;
+}
+.mBoard th {
+    padding: 11px 15px 10px;
+    vertical-align: top;
+    color: #2e3039;
+    background-color: #f3f3f3;
+}
+.icoRequired {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 12px;
+    vertical-align: baseline;
+    color: #fe434c;
+    font-weight: normal;
+    background: none;
+}
+.icoRequired::before {content: "(";}
+.icoRequired::after {content: ")";}
+
+.mBoard th[scope*='row'] + td {height: 32px;}
+.mBoard tbody > tr > td {border-top-width: 0;}
+.mBoard tbody td {border: 1px solid #dedede;}
+.mBoard td {
+    padding: 10px 15px;
+    line-height: 24px;
+    vertical-align: top;
+}
+.overlapTip {
+    position: relative;
+    display: inline-block;
+}
+.mFormRequired {
+    position: relative;
+    display: inline-block;
+    transition: all .2s ease-out;
+}
+input {
+    vertical-align: middle;
+}
+.fText {
+    height: 32px;
+    line-height: 14px;
+}
+.fText {
+    max-width: 100%;
+    padding: 0 9px 2px;
+    box-sizing: border-box;
+    border: 1px solid #d4d4d4;
+    font-size: 14px;
+    color: #686b6d;
+    outline: 0 none;
+    transition: border .2s ease-out;
+}
+.requiredMsg {
+    display: none;
+    position: absolute;
+    bottom: 25px;
+    right: -8px;
+    padding: 7px 6px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: normal;
+    white-space: nowrap;
+    line-height: 11px;
+    background: #ff6158;
+}
+.overlapTip .tip {
+    position: absolute;
+    left: 26px;
+    bottom: 28px;
+    padding: 10px 30px 10px 14px;
+    text-align: left;
+    font-weight: normal;
+    letter-spacing: normal;
+    border: 1px solid #4e505d;
+    line-height: 14px;
+    white-space: nowrap;
+    background-color: #fff;
+}
+span.txtByte {margin-left: -5px;}
+.txtByte {
+    vertical-align: bottom;
+    color: #97989b;
+}
+.txtByte strong {
+    color: #fe434c;
+    vertical-align: bottom;
+}
+.fText.right {text-align: right;}
 </style>
 <script>
 
@@ -316,7 +583,11 @@
                                                     <span class="edge"></span>
                                                 </div>
                                             </div>
-                                            <span class="txtByte" title="현재글자수/최대글자수"></span>
+                                            <span class="txtByte" title="현재글자수/최대글자수">
+                                                [
+                                                <strong>0</strong>
+                                                / 250 ]
+                                            </span>
                                         </td>
                                     </tr>
                                     <tr>
@@ -326,7 +597,9 @@
                                         </th>
                                         <td colspan="2">
                                             <input type="hidden" name="product-tax-type" value="A">
-                                            <span class="mFormRequired"></span>
+                                            <span class="mFormRequired">
+                                                <input type="text" class="fText right ePrdPrice eHasModifyProductAuth eMarketChecker ec-product-register-form-basic-price" name="product_price" style="width:150px;" value fw-label="판매가">
+                                            </span>
                                             원
                                         </td>
                                     </tr>
@@ -523,13 +796,124 @@
                                                                                 <li class="outdent">
                                                                                     <button id="product_description_BUTTON_outdent" type="button" title="내어쓰기" rel="basic" argv1="outdent" rel2="m"></button>
                                                                                 </li>
-                                                                                <li class="indent"></li>
-                                                                                <li class="inserthorizontalrule"></li>
+                                                                                <li class="indent">
+                                                                                    <button id="product_description_BUTTON_indent" type="button" title="들여쓰기" rel="default" argv1="indent" rel2="m"></button>
+                                                                                </li>
+                                                                                <li class="inserthorizontalrule">
+                                                                                    <button id="product_description_BUTTON_inserthorizontalrule" type="button" title="수평선 삽입" rel="basic" argv1="inserthorizontalrule"></button>
+                                                                                </li>
+
                                                                             </ul>
-                                                                            <ul class="se_toolbar_left2"></ul>
-                                                                            <ul class="se_toolbar_left2"></ul>
-                                                                            <ul class="se_toolbar_left2"></ul>
+                                                                            <ul class="se_toolbar_left2">
+                                                                                <li>
+                                                                                    <div class="divide"></div>
+                                                                                </li>
+                                                                                <li class="link">
+                                                                                    <button id="product_description_BUTTON_link" type="button" title="링크" rel="default" argv1="link" rel2="m"></button>
+                                                                                </li>
+                                                                                <li class="unlink">
+                                                                                    <button id="product_description_BUTTON_unlink" type="button" title="링크삭제" argv1="unlink" rel2="m" style="opacity: 0.3;"></button>
+                                                                                </li>
+                                                                            </ul>
+                                                                            <ul class="se_toolbar_left2">
+                                                                                <li>
+                                                                                    <div class="divide"></div>
+                                                                                </li>
+                                                                                <li class="table">
+                                                                                    <button id="product_description_BUTTON_table" type="button" title="표" rel="table" rel2="m"></button>
+                                                                                </li>
+                                                                                <li class="tableModify">
+                                                                                    <button id="product_description_BUTTON_tableModify" type="button" title="표 수정하기" rel2="m" style="opacity: 0.3;"></button>
+                                                                                </li>
+                                                                                <li class="/">
+                                                                                    <div class="divide"></div>
+                                                                                </li>
+                                                                                <li class="cellProp">
+                                                                                    <button id="product_description_BUTTON_cellProp" type="button" title="셀 속성" rel2="m" style="opacity: 0.3;"></button>
+                                                                                </li>
+                                                                                <li class="rowProp">
+                                                                                    <button id="product_description_BUTTON_rowProp" type="button" title="행 속성" rel2="m" style="opacity: 0.3;"></button>
+                                                                                </li>
+                                                                                <li class="/">
+                                                                                    <div class="divide"></div>
+                                                                                </li>
+                                                                                <li class="insertrow_before">
+                                                                                    <button id="product_description_BUTTON_insertrow_before" type="button" title="위에 행 삽입" rel2="m" style="opacity: 0.3;"></button>
+                                                                                </li>
+                                                                                <li class="insertrow_after">
+                                                                                    <button id="product_description_BUTTON_insertrow_after" type="button" title="밑에 행 삽입" rel2="m" style="opacity: 0.3;"></button>
+                                                                                </li>
+                                                                                <li class="deleterow">
+                                                                                    <button id="product_description_BUTTON_deleterow" type="button" title="가로줄 삭제" rel2="m" style="opacity: 0.3;"></button>
+                                                                                </li>
+                                                                                <li class="/">
+                                                                                    <div class="divide"></div>
+                                                                                </li>
+                                                                                <li class="insertcell_before">
+                                                                                    <button id="product_description_BUTTON_insertrow_insertcell_before" type="button" title="왼쪽에 열 삽입" rel2="m" style="opacity: 0.3;"></button>
+                                                                                </li>
+                                                                                <li class="insertcell_after">
+                                                                                    <button id="product_description_BUTTON_insertrow_insertcell_after" type="button" title="오른쪽에 열 삽입" rel2="m" style="opacity: 0.3;"></button>
+                                                                                </li>
+                                                                                <li class="deletecell">
+                                                                                    <button id="product_description_BUTTON_insertrow_insertcell_deletecell" type="button" title="세로줄 삭제" rel2="m" style="opacity: 0.3;"></button>
+                                                                                </li>
+                                                                                <li class="/">
+                                                                                    <div class="divide"></div>
+                                                                                </li>
+                                                                                <li class="merge">
+                                                                                    <button id="product_description_BUTTON_insertrow_insertcell_merge" type="button" title="셀 합치기" rel2="m" style="opacity: 0.3;"></button>
+                                                                                </li>
+                                                                                <li class="mergeRecover">
+                                                                                    <button id="product_description_BUTTON_insertrow_insertcell_mergeRecover" type="button" title="합친셀 복원" rel2="m" style="opacity: 0.3;"></button>
+                                                                                </li>
+                                                                            </ul>
+                                                                            <ul class="se_toolbar_left2">
+                                                                                <li>
+                                                                                    <div class="divide"></div>
+                                                                                </li>
+                                                                                <li class="image">
+                                                                                    <button id="product_description_BUTTON_insertrow_insertcell_image" type="button" title="이미지" rel="default" argv1="image" rel2="m"></button>
+                                                                                </li>
+                                                                                <li class="images">
+                                                                                    <button id="product_description_BUTTON_insertrow_insertcell_images" type="button" title="이미지" title rel="default" argv1="images" rel2="m" style="background-image: url('../img/'); background-repeat: no-repeat; background-position: 3px 3px; width: 20px;"></button>
+                                                                                </li>
+                                                                                <li class="html">
+                                                                                    <button id="product_description_BUTTON_insertrow_insertcell_html" type="button" rel="html" rel2="m"></button>
+                                                                                </li>
+                                                                                <li class="uploader">
+                                                                                    <button id="product_description_BUTTON_insertrow_insertcell_uploader" type="button" title rel="default" argv1="uploader" rel2="m" style="background-image: url('../img/'); background-repeat: no-repeat; background-position: 0px 2px; width: 68px;"></button>
+                                                                                </li>
+                                                                                <li class="help">
+                                                                                    <button id="product_description_BUTTON_insertrow_insertcell_help" title rel="default" argv1="help" rel2="m"></button>
+                                                                                </li>
+                                                                            </ul>
                                                                         </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td id="product_description_iframe_container" class="nneditor-iframe-container">
+                                                                        <iframe id="product_description_IFRAME" frameborder="no" tabindex="0" style="width: 100%; height: 170px; display: block;">
+                                                                            <html>
+                                                                                <head>
+                                                                                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                                                                                    <style type="text/css"></style>
+                                                                                </head>
+                                                                                <body>
+                                                                                    <p>
+                                                                                        <br>
+                                                                                    </p>
+                                                                                </body>
+                                                                            </html>
+                                                                        </iframe>
+                                                                        <textarea name="product_description" id="product_description_TEXTAREA" style="display: none; width: 100%; height: 170px; border: 0px none; clear: both; font-size: 9px; font-family: gulim; margin: 0px; padding: 0px; resize: none;"></textarea>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <button type="button" id="product_description_seResize" class="seResize2" onfocus="this.blur()" tabindex="100000">
+                                                                            <span>입력창 크기 조절</span>
+                                                                        </button>
                                                                     </td>
                                                                 </tr>
                                                             </tbody>
@@ -539,11 +923,161 @@
                                             </div>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <th scope="row">이미지</th>
+                                        <td>
+                                            <span class="txtStrong">대표이미지</span>
+                                            <div class="mThumb gLarge gDouble" id="ec-product-register-image-empty">
+                                                <div class="btnAdd" id="ec-product-register-detail-image-upload">등록</div>
+                                            </div>
+                                            <ul class="txtInfo">
+                                                <li>
+                                                    권장사이즈 : 500px * 500px
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <span class="txtStrong">추가이미지</span>
+                                            <span class="txtByte" title="현재글자수/최대글자수">
+                                                [
+                                                <strong id="ec_product-register-addimage-count">0</strong>
+                                                / 20 ]
+                                            </span>
+                                            <div class="mThumbs eImgSort" id="ec-product-register-addimage-list">
+                                                <ul id="extraImage" class="ui-sortable">
+                                                    <li id="ec-product-register-addimage-upload">
+                                                        <div class="mThumb gSmall">
+                                                            <div class="btnAdd">등록</div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <ul class="txtInfo">
+                                                <li>
+                                                    권장이미지
+                                                    <span class="size" id="zImagSizeInfo">500px * 500px</span>
+                                                    / 1M 이하 / gif, png, jpg(jpeg) / 20개까지 추가 가능
+                                                </li>
+                                            </ul>
+                                            <ul class="mThumbList"></ul>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-
+                    <div class="mToggleBar eToggle selected ec-product-register-toggle" bindstatus="true">
+                        <h2>쇼핑몰 진열설정</h2>
+                        <div class="ctr1">
+                            <span>
+                                <button type="button">
+                                    <em>열기</em>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mToggleBar eToggle selected ec-product-register-toggle" bindstatus="true">
+                        <h2>판매 정보</h2>
+                        <div class="ctr1">
+                            <label class="gLabel">
+                                <input type="checkbox" name="aToggleValue[sales]" value="T" data-uncheck="F">
+                                항상열기
+                            </label>
+                            <span>
+                                <button type="button">
+                                    <em>열기</em>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mToggleBar eToggle selected ec-product-register-toggle" bindstatus="true">
+                        <h2>옵션설정</h2>
+                        <div class="ctr1">
+                            <label class="gLabel">
+                                <input type="checkbox" name="aToggleValue[sales]" value="T" data-uncheck="F">
+                                항상열기
+                            </label>
+                            <span>
+                                <button type="button">
+                                    <em>열기</em>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="delivery" class="mToggleBar eToggle selected ec-product-register-toggle" bindstatus="true">
+                        <h2>배송정보</h2>
+                        <div class="ctr1">
+                            <label class="gLabel">
+                                <input type="checkbox" name="aToggleValue[sales]" value="T" data-uncheck="F">
+                                항상열기
+                            </label>
+                            <span>
+                                <button type="button">
+                                    <em>열기</em>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mToggleBar eToggle selected ec-product-register-toggle" bindstatus="true">
+                        <h2>제작정보</h2>
+                        <div class="ctr1">
+                            <label class="gLabel">
+                                <input type="checkbox" name="aToggleValue[sales]" value="T" data-uncheck="F">
+                                항상열기
+                            </label>
+                            <span>
+                                <button type="button">
+                                    <em>열기</em>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mToggleBar eToggle selected ec-product-register-toggle" bindstatus="true">
+                        <h2>상품 꾸미기</h2>
+                        <div class="ctr1">
+                            <label class="gLabel">
+                                <input type="checkbox" name="aToggleValue[sales]" value="T" data-uncheck="F">
+                                항상열기
+                            </label>
+                            <span>
+                                <button type="button">
+                                    <em>열기</em>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mToggleBar eToggle selected ec-product-register-toggle" bindstatus="true">
+                        <h2>상세이용안내</h2>
+                        <div class="ctr1">
+                            <label class="gLabel">
+                                <input type="checkbox" name="aToggleValue[sales]" value="T" data-uncheck="F">
+                                항상열기
+                            </label>
+                            <span>
+                                <button type="button">
+                                    <em>열기</em>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mToggleBar eToggle selected ec-product-register-toggle" bindstatus="true">
+                        <h2>검색엔진 최적화</h2>
+                        <div class="ctr1">
+                            <label class="gLabel">
+                                <input type="checkbox" name="aToggleValue[sales]" value="T" data-uncheck="F">
+                                항상열기
+                            </label>
+                            <span>
+                                <button type="button">
+                                    <em>열기</em>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    
                 </form>
-                <div class="mButton gCenter gFixed"></div>
+                <div class="mButton gCenter gFixed">
+                    <a href="#" class="btnSubmit" id="ec-product-register-submit">상품등록</a>
+                    <a href="#" class="btnEm" id="eProductPreview">미리보기</a>
+                </div>
             </div>
