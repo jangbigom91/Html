@@ -92,7 +92,7 @@ img {
     border: 1px solid #787d8f;
     background-color: #8b93a9;
 }
-.mToggleBar.selected h2 {color: #fff;}
+.mToggleBar.selected h2 {color: #fff; font-weight: bold;}
 .mToggleBar h2 {
     float: left;
     padding: 13px 0 0 20px;
@@ -194,6 +194,7 @@ tr {
     padding: 11px 15px 10px;
     vertical-align: top;
     color: #2e3039;
+    font-weight: bold;
     background-color: #f3f3f3;
 }
 .icoRequired {
@@ -268,7 +269,7 @@ input {
     white-space: nowrap;
     background-color: #fff;
 }
-span.txtByte {margin-left: -5px;}
+span.txtByte {margin-left: 5px;}
 .txtByte {
     vertical-align: bottom;
     color: #97989b;
@@ -278,6 +279,219 @@ span.txtByte {margin-left: -5px;}
     vertical-align: bottom;
 }
 .fText.right {text-align: right;}
+.btnNormal {
+    height: 28px;
+    padding: 0 10px;
+    color: #1c1c1c;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 26px;
+    border: 1px solid #98989b;
+    background-color: #fff;
+    transition: .2s ease-out;
+}
+.btnNormal {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+input[type="hidden" i] {
+    display: none;
+    appearance: initial;
+    background-color: initial;
+    cursor: default;
+    border: initial;
+}
+.mTab {margin: 0 0 20px;}
+.mTab.typeSub {
+    display: flex;
+    position: relative;
+}
+.mTab.typeSub > ul {
+    display: flex;
+    flex: 1;
+    position: relative;
+    border-left: 1px solid #dadcdd;
+}
+.mTab.typeSub > ul > li {
+    display: flex;
+    min-width: 40px;
+    height: 36px;
+    box-sizing: border-box;
+    border-top: 1px solid #dadcdd;
+    border-right: 1px solid #dadcdd;
+    background-color: #f5f7fb;
+}
+.mTab.typeSub > ul > li > a {
+    display: inline-block;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 13px;
+    line-height: 34px;
+    color: #898989;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+}
+.mTab.typeSub > ul > li.selected {
+    height: 37px;
+    z-index: 1;
+    background-color: #fff;
+}
+.mTab.typeSub > ul > li.selected a {
+    color: #fe434c;
+}
+.mTab.typeSub::after {
+    content: "";
+    position: absolute;
+    top: 36px;
+    left: 0;
+    right: 0;
+    display: block;
+    border-bottom: 1px solid #dadcdd;
+}
+.mBoard .gEditor {margin: 0 0 3px;}
+div.nneditor-container {
+    position: relative;
+    line-height: 1.0;
+}
+div.nneditor-container * {
+    margin: 0;
+    padding: 0;
+    font-size: 8pt;
+    font-style: normal;
+}
+.mBoard .gEditor table.seLayout {
+    border: 1px solid #e1e1e1;
+    border-bottom: 0;
+}
+table.seLayout {
+    width: 100%;
+    background: #F8F8F8 none repeat scroll 0 0;
+    border-style: none solid;
+    border-width: 0 1px;
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+table.seLayout td {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    height: 1%;
+    line-height: 1.0em;
+}
+.mBoard .gEditor td {
+    width: auto;
+    min-width: 0;
+}
+div.nneditor-container .nneditor-toolbar-container {border-top: 1px solid #ccc;}
+div.nneditor-container div.SE_TOOLBAR ul {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.se_toolbar_left2 {float: left;}
+div.nneditor-container div.SE_TOOLBAR li {
+    float: left;
+    margin: 2px;
+    padding: 0;
+}
+div.nneditor-container div.SE_TOOLBAR li {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+}
+div.nneditor-container div.SE_TOOLBAR .divide {
+    background: transparent url('../img/icons.gif') repeat scroll -180px 0;
+    display: block;
+    height: 20px;
+    margin: 0 1px 0;
+    width: 1px;
+}
+.mBoard .gEditor table table {
+    width: auto;
+    min-width: 0;
+}
+table.nneditor-table {
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+    height: 10px;
+    border: 0 none;
+    border-collapse: collapse;
+    display: block;
+}
+table.nneditor-table td {
+    white-space: nowrap;
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+.mBoard .gEditor td {
+    width: auto;
+    min-width: 0;
+}
+div.nneditor-container .img_button.mode {background-position: -260px 0;}
+div.nneditor-container .img_button {
+    background: transparent url('../img/icons.gif') no-repeat scroll 0 0;
+    height: 20px;
+    width: 20px;
+}
+div.nneditor-container div.SE_TOOLBAR .nneditor-fonttype {
+    background-image: none;
+    width: 43px;
+    border-color: #B7B7A6 #fff #B7B7A6 #B7B7A6;
+    border-style: solid none solid solid;
+    border-width: 1px 0 1px 1px;
+    background-color: #fff;
+    text-align: center;
+    font-family: dotum;
+    font-size: 11px;
+    line-height: 18px;
+}
+div.nneditor-container div.SE_TOOLBAR a.fieldButton {
+    background: transparent url('../img/icons.gif') repeat scroll -741px 0;
+    border: 1px solid #B7B7A6;
+    height: 18px;
+    width: 9px;
+    cursor: pointer;
+    line-height: 20px;
+    display: block;
+}
+div.nneditor-container div.SE_TOOLBAR .nneditor-fontsize {
+    background-image: none;
+    width: 43px;
+    border-color: #B7B7A6 #fff #B7B7A6 #B7B7A6;
+    border-style: solid none solid solid;
+    border-width: 1px 0 1px 1px;
+    background-color: #fff;
+    text-align: center;
+    font-family: dotum;
+    font-size: 11px;
+    line-height: 18px;
+}
+div.nneditor-container div.SE_TOOLBAR .docunew button {background-position: -520px 0;}
+div.nneditor-container div.SE_TOOLBAR li button {
+    border: 0 none;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url('../img/icons.gif');
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+div.nneditor-container div.SE_TOOLBAR .undo button {background-position: -160px 0;}
+
 </style>
 <script>
 
@@ -634,7 +848,16 @@ span.txtByte {margin-left: -5px;}
                                             <input type="hideen" id="mobile_img_width_value" value="320">
                                         </th>
                                         <td colspan="2">
-                                            <div class="mTab typeSub"></div>
+                                            <div class="mTab typeSub">
+                                                <ul>
+                                                    <li class id="eTabEdiBot">
+                                                        <a href="#" id="ediBotTab">에디봇 작성</a>
+                                                    </li>
+                                                    <li class="selected" id="eTabNnedit">
+                                                        <a href="#" id="nnedit">직접 작성</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
                                             <div id="tabCont1_1" class="tabCont" style="display: none;">
                                                 <div id="edibotGuides" style="display: none;"></div>
                                             </div>
