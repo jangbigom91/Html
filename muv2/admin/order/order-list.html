@@ -5,7 +5,7 @@
     <title>맨유::order-list</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="./js/admin.js"></script>
+    <script src="../js/admin.js"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="../css/product.css">
@@ -65,6 +65,7 @@ caption {
 .mOption th {
     padding: 9px 9px 7px;
     border: 1px solid #dedede;
+    font-weight: bold;
     text-align: left;
     vertical-align: top;
     background-color: #f3f3f3;
@@ -87,7 +88,175 @@ caption {
 }
 .fSelect {
     padding: 0 30px 0 10px;
-    background: #fff url('') no-repeat right 10px center;
+    background: #fff url('../img/ico_select.png') no-repeat right 10px center;
+}
+.btnDate {
+    min-width: 46px;
+    height: 28px;
+    padding: 0 5px;
+    font-size: 13px;
+    line-height: 26px;
+    color: #2e3039;
+    border: 1px solid #98989b;
+    background-color: #fff;
+    transition: .2s ease-out;
+}
+.btnDate {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.btnDate + .btnDate {
+    position: relative;
+    z-index: 1;
+    margin-left: -5px;
+    border-right: 0;
+}
+.btnDate.selected {
+    color: #fff;
+    border-color: #fe343c;
+    background-color: #fe343c;
+}
+.btnDate:hover {
+    color: #fff;
+    border-color: #fe343c;
+    background-color: #fe343c;
+}
+.btnDate + .btnDate:before {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    display: block;
+    width: 1px;
+    height: 28px;
+    background-color: #98989b;
+}
+.btnDate + .btnDate:after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: -1px;
+    right: 0;
+    display: block;
+    width: 1px;
+    height: 28px;
+    background-color: #98989b;
+}
+.gBreak {
+    display: inline-block;
+    margin: 1px 0 0;
+}
+.fText {
+    height: 32px;
+    line-height: 14px;
+}
+.fText {
+    max-width: 100%;
+    padding: 0 9px 2px;
+    box-sizing: border-box;
+    border: 1px solid #d4d4d4;
+    font-size: 14px;
+    color: #686b6d;
+    outline: 0 none;
+    transition: border .2s ease-out;
+}
+.fText.gDate {
+    width: 100px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.btnIcon.icoCal {
+    width: 19px;
+    height: 19px;
+    vertical-align: text-top;
+    background-position: -50px -500px;
+}
+a.btnIcon {
+    display: inline-block;
+    overflow: hidden;
+    width: 28px;
+    height: 28px;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+    background: url('../img/sfix_icon_button.png') 0 0 no-repeat;
+    box-sizing: border-box;
+}
+.btnIcon span {
+    visibility: hidden;
+    display: block;
+    height: 100%;
+    font-size: 1px;
+}
+.btnIcon.icoPlus {
+    position: relative;
+    border: 1px solid #98989b;
+    background-color: #fff;
+    background-image: none;
+}
+.btnIcon.icoPlus:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 2px;
+    margin: -1px 0 0 -6px;
+    background-color: #565656;
+    background-image: none;
+}
+.btnIcon.icoPlus:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 12px;
+    margin: -6px 0 0 -1px;
+    background-color: #565656;
+    transform: rotate(180deg);
+    background-image: none;
+}
+.btnNormal {
+    height: 28px;
+    padding: 0 10px;
+    color: #1c1c1c;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 26px;
+    border: 1px solid #98989b;
+    background-color: #fff;
+    transition: .2s ease-out;
+}
+.btnNormal {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.btnNormal em.icoLink {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin: -3px -4px 0 4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: #6b6b6b transparent transparent transparent;
+    vertical-align: middle;
+    -webkit-transform: rotate(-90deg);
 }
 </style>
 <script>
@@ -423,7 +592,7 @@ caption {
                                         기간
                                     </th>
                                     <td colspan="3">
-                                        <select name="data_type" style="width: 115px;" class="fSelect disabled">
+                                        <select name="date_type" style="width: 115px;" class="fSelect disabled">
                                             <option value="order_date" selected="selected">주문일</option>
                                             <option value="memo_date">메모작성일</option>
                                             <option value="pay_date">결제일</option>
