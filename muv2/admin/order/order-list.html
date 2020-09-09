@@ -13,6 +13,11 @@
 </head>
 <style>
 /* order-list */
+body {
+    font-size: 14px;
+    font-family: '맑은 고딕', 'Malgun Gothic', 'Dotum', '돋움', 'arial', 'verdana', sans-serif;
+    color: #2e3039;
+}
 .optionArea {
     margin: 0 0 30px;
     padding: 20px;
@@ -50,6 +55,15 @@
 }
 .cTip {display: inline-block;}
 
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+th {
+    display: table-cell;
+    font-weight: bold;
+    margin: 0;
+}
 .mOption table {
     line-height: 1.5;
     background-color: #fff;
@@ -258,6 +272,68 @@ a.btnIcon {
     vertical-align: middle;
     -webkit-transform: rotate(-90deg);
 }
+
+label.gLabel {outline: 0;}
+.gLabel {
+    display: inline-block;
+    margin: 0 28px 0 0;
+}
+.gLabel .fChk {vertical-align: text-top;}
+input[type="checkbox"]:checked {
+    border: 0;
+    background-image: url('../img/bg_checkbox_checked.png');
+    transition: .2s ease-out;
+}
+input[type="checkbox"] {
+    position: relative;
+    opacity: 1;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    background: #fff;
+    outline: 0;
+}
+
+.mButton {
+    margin: 20px 0;
+    padding: 0 4px 0 0;
+}
+.mButton.gCenter {
+    position: relative;
+    text-align: center;
+}
+.mButton a:first-child {margin-left: 0;}
+.mButton a {margin: 0 0 0 10px;}
+.mButton::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+.btnSearch {
+    min-width: 84px;
+    height: 36px;
+    padding: 0 20px;
+    color: #fff;
+    line-height: 34px;
+    border: 1px solid transparent;
+    background-color: #fe343c;
+}
+.btnSearch {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.btnSearch.reset {
+    color: #fe343c;
+    border-color: #fe343c;
+    background-color: #fff;
+}
+
 </style>
 <script>
 
