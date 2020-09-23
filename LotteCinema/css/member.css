@@ -1,0 +1,169 @@
+/* lottecinema - login */
+.quick_wrap {
+    position: absolute;
+    z-index: 11;
+    right: 20px;
+    padding-top: 50px;
+    width: 82px;
+    text-align: center;
+}
+.quick_wrap .quick_menu {
+    overflow: hidden;
+    background: #fff;
+    width: 76px;
+    padding-top: 15px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    z-index: 91;
+    text-align: center;
+    -webkit-border-radius: 4px;
+}
+.quick_wrap .quick_menu a {
+    display: block;
+    padding: 5px;
+}
+.quick_wrap .quick_menu .qick_top {
+    background: #3A3A3A;
+    font-family: 'Roboto';
+    font-size: 11px;
+    color: #fff;
+    letter-spacing: 5px;
+    margin-top: 10px;
+    padding-left: 13px;
+}
+
+#contents.contents_member_comn {padding-top: 105px;}
+
+.tab_wrap {position: relative;}
+.tab_wrap.outer {padding-top: 80px;}
+.tab_wrap.outer > li.active > .tab_tit {
+    border-bottom: 2px solid #111;
+    color: #000;
+}
+.tab_wrap.outer > li > .tab_tit {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #CCC;
+    font-size: 15px;
+    color: #7F7F7F;
+}
+.tab_wrap > li > .tab_tit {border: none;}
+.tab_wrap > li > .tab_tit {
+    position: absolute;
+    top: 0;
+}
+.tab_wrap > li > .tab_tit span {
+    vertical-align: top;
+    white-space: nowrap;
+}
+.tab_wrap > li.active > .tab_con {
+    overflow: hidden;
+    position: relative;
+    width: auto;
+    height: auto;
+}
+.hidden {
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.member_login_wrap {
+    padding: 60px 0;
+    background-color: #F5F5F5;
+}
+.member_login_wrap .contents_inner {position: relative;}
+.member_login_wrap .login_box {
+    position: relative;
+    width: 470px;
+    min-height: 220px;
+    -webkit-box-sizing: border-box;
+}
+.member_login_wrap .login_box .tip {font-size: 15px;}
+.member_login_wrap .login_box .login_area {
+    position: relative;
+    margin-top: 21px;
+    padding-right: 120px;
+}
+.member_login_wrap .login_box .login_area input {
+    display: block;
+    width: 100%;
+    height: 45px;
+}
+.member_login_wrap .login_box .login_area input + input {margin-top: 10px;}
+.member_login_wrap .login_box .login_area .btn_login {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 110px;
+    height: 100px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: #FF243E;
+}
+.member_login_wrap .login_box .login_bot_wrap {margin: 15px 0 40px;}
+.member_login_wrap .login_box .login_bot_wrap .login_check {float: left;}
+.member_login_wrap .login_box .login_bot_wrap .login_check label {min-width: 88px;}
+input[type="radio"] + label, input[type="checkbox"] + label  {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    border: 1px solid #DDD;
+    background-color: #fff;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    vertical-align: -5px;
+    border-radius: 3px;
+}
+.member_login_wrap .login_box .login_bot_wrap .login_menu {
+    float: right;
+    font-size: 0;
+    line-height: 20px;
+}
+.member_login_wrap .login_box .login_bot_wrap .login_menu a:first-child {margin-left: 0;}
+.member_login_wrap .login_box .login_bot_wrap .login_menu a {
+    position: relative;
+    margin-left: 20px;
+    color: #666;
+    font-size: 12px;
+}
+.member_login_wrap .login_box .login_bot_wrap .login_menu a:after {
+    content: "";
+    position: absolute;
+    left: -11px;
+    top: 50%;
+    margin-top: -5px;
+    width: 1px;
+    height: 10px;
+    background: #ddd;
+}
+.member_login_wrap .login_box .login_bot_wrap:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.member_login_wrap .login_box .login_ad {text-align: right;}
+
+.member_login_wrap .ad_box {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 451px;
+    height: 220px;
+}
+.tab_wrap.outer > li > .tab_tit {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #CCC;
+    font-size: 15px;
+    color: #7F7F7F;
+}
+
+button > * {position: relative;}
