@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOTTE CINEMA::회원가입</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/member.css">
+
+<style>
+/* lottecinema - register */
+.tab_warp {position: relative;}
+.tab_wrap.outer {padding-top: 80px;}
+
+.tab_wrap.outer > li.active > .tab_tit {
+    border-bottom: 2px solid #111;
+    color: #000;
+}
+.tab_wrap.outer > li > .tab_tit {
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+}
+.tab_wrap > li > .tab_tit {border: none;}
+.tab_wrap > li > .tab_tit {
+    position: absolute;
+    top: 0;
+}
+.tab_wrap > li > .tab_tit span {
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.tab_wrap > li.active > .tab_con {
+    overflow: inherit;
+    position: relative;
+    width: auto;
+    height: auto;
+}
+.hidden {
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+.contents_lpoint .join_wrap {margin-top: 55px;}
+.contents_lpoint .join_wrap .step_tit {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.contents_lpoint .join_wrap .step_tit .step {
+    display: block;
+    background: #23363D;
+    width: 104px;
+    height: 26px;
+    line-height: 26px;
+    font-family: 'Roboto';
+    font-size: 15px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+    vertical-align: text-bottom;
+    -webkit-border-radius: 4px;
+}
+.contents_lpoint .join_wrap p {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1.4;
+}
+.contents_lpoint .join_wrap .btn_join {
+    float: right;
+    background: #2AA3FE;
+    margin-top: -15px;
+    width: 180px;
+}
+.btn_col7 {
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #0EAFEE;
+    font-size: 14px;
+    color: #ffffff !important;
+    text-align: center;
+    vertical-align: middle;
+}
+.contents_lpoint .join_wrap .btn_join:before {
+    content: '';
+    background: url('../img/join_16_new.png') no-repeat 50% 50%;
+    display: inline-block;
+    width: 20px;
+    height: 22px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+    <div id="loading" class="loader loader-bouncing is-active hidden"></div>
+    <div id="skip_nav_section" class="skip_nav">
+        <ul>
+            <li>
+                <a href="#">주 메뉴 바로가기</a>
+            </li>
+            <li>
+                <a href="#">본문 바로가기</a>
+            </li>
+        </ul>
+    </div>
+    <div id="header_section" class="header">
+        <h1 class="logo">
+            <a href="#">LOTTE CINEMA</a>
+        </h1>
+        <div class="gnb">
+            <ul class="g_menu1">
+                <li>
+                    <a href="http://www.facebook.com/" class="btn_facebook" target="_blank" title="롯데시네마 페이스북 새창열림">좋아요</a>
+                </li>
+                <li>
+                    <a href="http://www.youtube.com/" class="btn_youtube" target="_blank" title="새창열림">구독하기</a>
+                </li>
+            </ul>
+            <ul class="g_menu2">
+                <li>
+                    <a href="#">멤버십</a>
+                </li>
+                <li>
+                    <a href="#">고객센터</a>
+                </li>
+                <li>
+                    <a href="#">로그인</a>
+                </li>
+            </ul>
+            <ul class="g_menu3">
+                <li>
+                    <a href="#" class="btn_my">회원가입</a>
+                </li>
+                <li>
+                    <a href="#" class="btn_reserve">바로 예매</a>
+                </li>
+                <li>
+                    <button class="btn_menu_all">전체 메뉴 레이어 열기</button>
+                    <div id="allmenu"></div>
+                </li>
+            </ul>
+        </div>
+        <div id="nav">
+            <ul>
+                <li class>
+                    <a href="#">예매</a>
+                </li>
+                <li class>
+                    <a href="#">영화</a>
+                </li>
+                <li class>
+                    <a href="#">영화관</a>
+                </li>
+                <li class>
+                    <a href="#">이벤트</a>
+                </li>
+                <li class>
+                    <a href="#">스토어</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="quick_wrap" style="padding-top: 105px;">
+        <div id="quick_menu" class="quick_menu" style="top: 220px;">
+            <a href="#">
+                <img src="../img/961c9cbf311b4f1299827c21a61fab76.png" alt="예매하기">
+            </a>
+            <a href="#">
+                <img src="../img/c1dbce4f91e948498c7c78239b7157ac.png" alt="상영시간표">
+            </a>
+            <a href="#">
+                <img src="../img/c793af89f3b648aa99cc679186ccfa02.png" alt="discount-guide">
+            </a>
+            <a href="#">
+                <img src="../img/c0945ca778f1470db48a5a90123f2e11.png" alt="merbership">
+            </a>
+            <a href="#">
+                <img src="../img/e339dfaae8d74acfbf7b0c6987442ac8.png" alt="고객센터">
+            </a>
+            <a href="#">
+                <img src="../img/df3d477b5f0f46fc86babc5de3753636.png" alt="스페셜관">
+            </a>
+            
+            <a href="#" class="qick_top">TOP</a>
+        </div>
+    </div>
+    <div id="contents" class="contents_lpoint">
+        <ul class="tab_wrap outer">
+            <li class="active">
+                <button type="button" class="tab_tit" style="width: 50%; left: 0%;">
+                    <span>가입방법</span>
+                </button>
+                <div class="tab_con">
+                    <h3 class="hidder">가입방법</h3>
+                    <div class="banner_01">
+                        <img src="../img/lpoint_980_new.png" alt="당신의 영화생활을 더 행복하게 하는 L.POINT">
+                    </div>
+                    <div class="join_wrap">
+                        <h4 class="step_tit">
+                            <span class="step">STEP.1</span>
+                            회원가입
+                        </h4>
+                        <p>L.POINT 아이디 하나면, 모든 L.POINT 제휴사의 온라인/모바일을 편리하게 이용할 수 있습니다.</p>
+                        <a href="#" class="btn_col7 ty6 btn_join">
+                            회원가입하기
+                        </a>
+                    </div>
+                    <div class="join_wrap">
+                        <h4 class="step_tit">
+                            <span class="step">STEP.2</span>
+                            L.POINT 카드 신청
+                        </h4>
+                        <table class="inner_table" summary="L.POINT 카드신청관련 테이블">
+                            <caption>L.POINT 카드신청</caption>
+                            <colgroup>
+                                <col style="width: 50%;">
+                                <col style="width: auto;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">영화관 현장신청</th>
+                                    <th scope="col">홈페이지 신청</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text_1">
+                                        <ul class="list_txt">
+                                            <li>가까운 영화관에 방문하시면 포인트 카드를 수령할 수 있습니다.</li>
+                                            <li>수령한 카드는 L.POINT 홈페이지(www.lpoint.com) 및 모바일에서 등록해 주세요.</li>
+                                        </ul>
+                                        <div class="tit">※ 유의사항</div>
+                                        <ul class="list_txt sm">
+                                            <li>카드 등록 전에는 결제 금액의 0.1%가 L.POINT로 적립됩니다. </li>
+                                            <li>(이미 포인트를 적립 받은 예매 건에 대해서는 카드 등록 후에도 추가 포인트가 제공되지 않습니다.) </li>
+                                            <li>카드 등록 전에 예매한 건에 대해서는 카드 등록 후에도 VIP 승급 내역에 반영되지않습니다. </li>
+                                            <li>카드 등록 전에는 포인트 적립만 가능하며 사용은 불가능합니다. </li>
+                                            <li>카드 등록 전 분실 시, 적립된 포인트는 반환되지 않습니다. </li>
+                                            <li>만 14세 이상만 카드 등록이 가능합니다. </li>
+                                        </ul>
+                                    </td>
+                                    <td class="text_1">
+                                        <ul class="list_txt">
+                                            <li>
+                                                온라인 신청서를 작성하면 L.POINT 카드를 발급 받을 수 있습니다.<br>
+                                                신청한 카드는 신청 후 한 달 이내에 카드 신청 시 입력된 주소로 배송 됩니다.
+                                            </li>
+                                            <li>
+                                                롯데신용카드는 L.POINT 카드로 동시 사용이 가능하므로 <br>
+                                                롯데신용카드를 소지하였을 경우 포인트카드를 별도로 신청하지 않아도 됩니다.
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn_col3 ty7">
+                                            <span class="ico_lpoint">
+                                                <em>L.POINT</em>
+                                            </span>
+                                            카드등록
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn_col3 ty7">
+                                            <span class="ico_lpoint">
+                                                <em>L.POINT</em>
+                                            </span>
+                                            카드신청
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <button type="button" class="tab_tit" style="width: 50%; left: 50%;">
+                    <span>L.POINT 안내</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div id="banner_section" class="banner_wrap">
+        <div class="banner_01">
+            <a href="#" target>
+                <img src="../img/Greenland_980180.jpg" alt="진짜 내 생각이 들려? 역대급 천재 댕댕이 탄생! 이프 온리 감독 작품 지니어스 독 9월 16일 함께하시개 유쾌한 댕댕이 코미디 예매로 확인! 12세 이상 관람가">
+            </a>
+        </div>
+        <div id="footerBanner" class="banner_type02" style="background-color: rgb(0, 92, 185); background-image: url('../img/bg_01.jpg'); background-repeat: repeat-x; background-position: 0px 0px;">
+           <a href="#" target="_blank">
+               <img src="../img/Hyundaicard_980240.jpg" alt="금요일 토요일 5000 엠포인트 사용 그 외 2500 엠포인트">
+           </a>
+        </div>
+    </div>
+    <div id="footer_section" class="footer">
+        <div class="inner">
+            <span class="f_logo">
+                <img src="../img/logo_footer.gif" alt="LOTTE CINEMA">
+            </span>
+            <ul class="f_menu">
+                <li>
+                    <a href="#" title="회원약관" target="_self">회원약관</a>
+                </li>
+                <li>
+                    <a href="#" title="개인정보처리방침" target="_self">
+                        <strong>개인정보처리방침</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="이메일" target="_self">이메일무단수집거부</a>
+                </li>
+                <li>
+                    <a href="#" title="영상정보처리기기 운영∙관리방침" target="_self">영상정보처리기기 운영∙관리방침</a>
+                </li>
+                <li>
+                    <a href="#" title="L.POINT회원안내" target="_self">L.POINT회원안내</a>
+                </li>
+                <li>
+                    <a href="#" title="배정기준" target="_self">배정기준</a>
+                </li>
+                <li>
+                    <a href="#" title="채용안내" target="_self">채용안내</a>
+                </li>
+                <li>
+                    <a href="#" title="광고/임대문의" target="_self">광고/임대문의</a>
+                </li>
+                <li>
+                    <a href="#" title="윤리경영" target="_self">윤리경영</a>
+                </li>
+                <li>
+                    <a href="#" title="기업정보" target="_self">기업정보</a>
+                </li>
+            </ul>
+            <div class="bx_address">
+                <address>서울특별시 송파구 올림픽로 300 롯데월드타워 27층</address>
+                <span class="bar">고객센터 1544-8855</span>
+                <br>
+                <span>대표이사 기원규</span>
+                <span class="bar">사업자등록번호 313-87-00979</span>
+                <span class="bar">통신판매업신고번호 제1184호</span>
+                <span class="bar">개인정보 보호책임자 이미선</span>
+            </div>
+            <p class="copyright">COPYRIGHT© LOTTE CINEMA ALL RIGHT RESERVED.</p>
+        </div>
+        <div class="article_award">
+            <div class="inner">
+                <ul>
+                    <li>
+                        <img src="../img/footer_award_NCSI5.png" alt="NCSI / NCSI 영화관부문 5년 연속 1위">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_kcsi.png" alt="KCSI 영화관부문 7년 연속 1위(총12회)">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_kssqi.png" alt="KS-SQI 영화관부문 8년 연속 1위(총11회)">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_brandcinema.png" alt="올해의 브랜드대상 영화관 부문 10년 연속 1위">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_greenstar.png" alt="그린스타 영화관 부문 4년 연속 1위">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_brandstar.png" alt="대한민국 브랜드 스타 영화관 부문 1위">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_familyship.png" alt="가족친화 인증기업 선정">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
