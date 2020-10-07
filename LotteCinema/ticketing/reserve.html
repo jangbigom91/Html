@@ -160,16 +160,394 @@
                                <div class="tab_con">
                                    <h5 class="hidden">전체</h5>
                                    <div class="cinema_select_wrap cinemaSelect basicCinema">
-                                       <ul></ul>
+                                       <ul>
+                                           <li class="depth1">
+                                               <a href="#">
+                                                    MY 영화관   
+                                                    <em>(0)</em>
+                                               </a>
+                                           </li>
+                                           <li class="depth1 active">
+                                               <a href="#">
+                                                   서울
+                                                   <em>(24)</em>
+                                               </a>
+                                               <div class="depth2">
+                                                   <div class="mCustomScrollbar basicCinemaScroll _mCS_1 mCS-autoHide" data-mcs-theme="minimal-dark" style="position: relative; overflow: visible;">
+                                                        <div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0">
+                                                            <div id="mCSB_1_container" class="mCSB_container" style="position: relative; top: 0; left: 0;" dir="ltr">
+                                                                <ul>
+                                                                    <li class><a>가산디지털</a></li>
+                                                                    <li class><a>가양</a></li>
+                                                                    <li class><a>강동</a></li>
+                                                                    <li class><a>건대입구</a></li>
+                                                                    <li class><a>김포공항</a></li>
+                                                                    <li class><a>노원</a></li>
+                                                                    <li class><a>도곡</a></li>
+                                                                    <li class><a>독산</a></li>
+                                                                    <li class><a>브로드웨이(신사)</a></li>
+                                                                    <li class><a>서울대입구</a></li>
+                                                                    <li class><a>수락산</a></li>
+                                                                    <li class><a>수유</a></li>
+                                                                    <li class><a>신도림</a></li>
+                                                                    <li class><a>신림</a></li>
+                                                                    <li class><a>에비뉴엘(명동)</a></li>
+                                                                    <li class><a>영등포</a></li>
+                                                                    <li class><a>용산</a></li>
+                                                                    <li class><a>월드타워</a></li>
+                                                                    <li class><a>은평(롯데몰)</a></li>
+                                                                    <li class><a>장안</a></li>
+                                                                    <li class>
+                                                                        <a>
+                                                                            중랑
+                                                                            <span class="txt_rnd_new">신규오픈</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class><a>청량리</a></li>
+                                                                    <li class><a>합정</a></li>
+                                                                    <li class><a>홍대입구</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div> 
+                                                        <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: block;">
+                                                            <div class="mCSB_draggerContainer">
+                                                                <div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; display: block; height: 601px; max-height: 719px; top: 0px;">
+                                                                    <div class="mCSB_dragger_bar" style="line-height: 50px;"></div>
+                                                                </div>
+                                                                <div class="mCSB_draggerRail"></div>
+                                                            </div>
+                                                        </div>
+                                                   </div>
+                                               </div>
+                                           </li>
+                                           <li class="depth1">
+                                               <a href="#">경기/인천</a>
+                                               <em>(44)</em>
+                                           </li>
+                                           <li class="depth1">
+                                               <a href="#">충청/대전</a>
+                                               <em>(9)</em>
+                                           </li>
+                                           <li class="depth1">
+                                               <a href="#">전라/광주</a>
+                                               <em>(9)</em>
+                                           </li>
+                                           <li class="depth1">
+                                               <a href="#">경북/대구</a>
+                                               <em>(16)</em>
+                                           </li>
+                                           <li class="depth1">
+                                               <a href="#">경남/부산/울산</a>
+                                               <em>(24)</em>
+                                           </li>
+                                           <li class="depth1">
+                                               <a href="#">강원</a>
+                                               <em>(4)</em>
+                                           </li>
+                                           <li class="depth1">
+                                               <a href="#">제주</a>
+                                               <em>(3)</em>
+                                           </li>
+                                       </ul>
                                    </div>
                                </div>
                            </li>
-                           <li></li>
+                           <li>
+                               <button type="button" class="tab_tit" style="width: 50%; left: 50%;">
+                                    <span>스페셜관</span>
+                               </button>
+                           </li>
                        </ul>
                    </div>
                </div>
-               <div class="article article_movie"></div>
-               <div class="article article_time"></div>
+               <div class="article article_movie">
+                   <div class="group_top">
+                       <h4 class="tit movie_name">영화 선택</h4>
+                   </div>
+                   <div class="inner">
+                       <div class="list_filter">
+                           <select>
+                               <option value="A">예매순</option>
+                               <option value="B">관객순</option>
+                               <option value="C">평점순</option>
+                               <option value="D">예정작</option>
+                           </select>
+                           <div class="bx_btn_view">
+                               <span class="hidden">목록 보기 방식</span>
+                               <ul>
+                                   <li>
+                                       <button type="button" class="btn_view_txt viewTxt active">텍스트형</button>
+                                   </li>
+                                   <li>
+                                    <button type="button" class="btn_view_thm viewThm">썸네일형</button>
+                                   </li>
+                               </ul>
+                           </div>
+                       </div>
+                       <div class="movie_select_wrap list movieSelect">
+                           <div class="mCustomScrollbar movieScroll _mCS_9 mCS-autoHide" data-mcs-theme="minimal-dark" style="position: relative; overflow: visible;">
+                                <div id="mCSB_9" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical mCSB_outside" tabindex="0" style="max-height: none;">
+                                    <div id="mCSB_9_container" class="mCSB_container" style="position: relative; top: 0; left: 0;" dir="ltr">
+                                        <ul>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_18">18세 관람가</span>
+                                                            <strong class="tit">언힌지드</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade gr_12">12세 관람가</span>
+                                                            <strong class="tit">담보</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade gr_15">15세 관람가</span>
+                                                            <strong class="tit">애프터: 그 후</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_12">12세 관람가</span>
+                                                            <strong class="tit">그린랜드</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_12">12세 관람가</span>
+                                                            <strong class="tit">테넷</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_15">15세 관람가</span>
+                                                            <strong class="tit">국제수사</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade gr_all">0세 관람가</span>
+                                                            <strong class="tit">극장판 포켓몬스터 뮤츠의 역습 EVOLUTION</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade gr_all">0세 관람가</span>
+                                                            <strong class="tit">밥정</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade gr_all">0세 관람가</span>
+                                                            <strong class="tit">극장판 미니특공대: 햄버거괴물의 습격</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade gr_all">0세 관람가</span>
+                                                            <strong class="tit">트롤킹</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_all">0세 관람가</span>
+                                                            <strong class="tit">마르지엘라</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_15">15세 관람가</span>
+                                                            <strong class="tit">검객</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_15">15세 관람가</span>
+                                                            <strong class="tit">죽지않는 인간들의 밤</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_15">15세 관람가</span>
+                                                            <strong class="tit">아웃포스트</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_all">0세 관람가</span>
+                                                            <strong class="tit">교실 안의 야크</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_15">15세 관람가</span>
+                                                            <strong class="tit">강철비2: 정상회담 확장판</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_15">15세 관람가</span>
+                                                            <strong class="tit">기기괴괴 성형수</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_15">15세 관람가</span>
+                                                            <strong class="tit">디바</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_12">12세 관람가</span>
+                                                            <strong class="tit">뮬란</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_15">15세 관람가</span>
+                                                            <strong class="tit">프린시스 하</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_all">0세 관람가</span>
+                                                            <strong class="tit">카일라스 가는 길</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_12">12세 관람가</span>
+                                                            <strong class="tit">우리가 이별 뒤에 알게 되는 것들</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_12">12세 관람가</span>
+                                                            <strong class="tit">다시 만난 날들</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class>
+                                                <a>
+                                                    <div class="group_infor">
+                                                        <div class="bx_tit">
+                                                            <span class="ic_grade_gr_all">0세 관람가</span>
+                                                            <strong class="tit">파밍 보이즈</strong>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div id="mCSB_9_scrollbar_vertical" class="mCSB_scrollTools mCSB_9_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: block;">
+                                    <div class="mCSB_draggerContainer">
+                                        <div id="mCSB_9_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; display: block; height: 247px; max-height: 720px; top: 483px;">
+                                            <div class="mCSB_dragger_bar" style="line-height: 50px;"></div>
+                                        </div>
+                                        <div class="mCSB_draggerRail"></div>
+                                    </div>
+                                </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="article article_time">
+                   <div class="group_top"></div>
+                   <div class="inner"></div>
+               </div>
            </div>
        </div>
     </div>
