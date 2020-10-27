@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOTTE CINEMA::할인안내</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/member.css">
+
+<style>
+/* ticketing - discount */
+#contents > .title_top {
+    margin-bottom: 20px;
+    padding: 25px 0 14px;
+    border-bottom: 1px solid #EEE;
+}
+#contents > .title_top.ty2 {
+    margin-bottom: 10px;
+    border-bottom: none;
+}
+#contents > .title_top .tit {
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+#contents > .title_top .group_rgt {float: right;}
+#contents > .title_top .group_rgt .bx_search {margin-top: -7px;}
+.bx_search {
+    display: inline-block;
+    overflow: hidden;
+    height: 40px;
+    padding: 0 20px 0 10px;
+    border-radius: 41px;
+    border: 1px solid #707070;
+    background-color: #FFF;
+}
+.bx_search input {
+    width: 240px;
+    height: 42px;
+    margin-top: -1px;
+    padding-left: 10px;
+    border: none;
+    background-color: transparent;
+}
+.btn_search {
+    width: 18px;
+    height: 18px;
+    background-image: url('../img/search.png');
+}
+#contents > .title_top:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.tab_wrap_lnk {
+    position: relative;
+    padding-top: 50px;
+}
+.tab_wrap_lnk > li > a {
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 50px;
+    line-height: 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #CCC;
+    font-size: 18px;
+    color: #7F7F7F;
+    text-align: center;
+}
+.tab_wrap_lnk > li > a > span {
+    vertical-align: top;
+    white-space: nowrap;
+}
+.tab_wrap_lnk > li > ul > li > a {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 50px;
+    height: 0;
+    padding: 0 10px;
+}
+.tab_wrap_lnk > li > ul > li.active > a, .tab_wrap_lnk > li > ul > li:hover > a {
+    margin-right: 20px;
+    color: #000;
+}
+.tab_wrap_lnk > li > ul > li > a > span {white-space: nowrap;}
+a, a:link, a:visited, a:active, a:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.contents_sale .sale_card_wrap {margin-top: 60px;}
+.contents_sale .sale_card_wrap .img_list {
+    margin-left: -40px;
+    font-size: 0;
+}
+</style>
+</head>
+<body>
+    <div id="loading" class="loader loader-bouncing is-active hidden"></div>
+    <div id="skip_nav_section" class="skip_nav">
+        <ul>
+            <li>
+                <a href="#">주 메뉴 바로가기</a>
+            </li>
+            <li>
+                <a href="#">본문 바로가기</a>
+            </li>
+        </ul>
+    </div>
+    <div id="header_section" class="header">
+        <h1 class="logo">
+            <a href="#">LOTTE CINEMA</a>
+        </h1>
+        <div class="gnb">
+            <ul class="g_menu1">
+                <li>
+                    <a href="http://www.facebook.com/" class="btn_facebook" target="_blank" title="롯데시네마 페이스북 새창열림">좋아요</a>
+                </li>
+                <li>
+                    <a href="http://www.youtube.com/" class="btn_youtube" target="_blank" title="새창열림">구독하기</a>
+                </li>
+            </ul>
+            <ul class="g_menu2">
+                <li>
+                    <a href="#">멤버십</a>
+                </li>
+                <li>
+                    <a href="#">고객센터</a>
+                </li>
+                <li>
+                    <a href="#">로그인</a>
+                </li>
+            </ul>
+            <ul class="g_menu3">
+                <li>
+                    <a href="#" class="btn_my">회원가입</a>
+                </li>
+                <li>
+                    <a href="#" class="btn_reserve">바로 예매</a>
+                </li>
+                <li>
+                    <button class="btn_menu_all">전체 메뉴 레이어 열기</button>
+                    <div id="allmenu"></div>
+                </li>
+            </ul>
+        </div>
+        <div id="nav">
+            <ul>
+                <li class>
+                    <a href="#">예매</a>
+                </li>
+                <li class>
+                    <a href="#">영화</a>
+                </li>
+                <li class>
+                    <a href="#">영화관</a>
+                </li>
+                <li class>
+                    <a href="#">이벤트</a>
+                </li>
+                <li class>
+                    <a href="#">스토어</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="quick_wrap" style="padding-top: 105px;">
+        <div id="quick_menu" class="quick_menu" style="top: 220px;">
+            <a href="#">
+                <img src="../img/961c9cbf311b4f1299827c21a61fab76.png" alt="예매하기">
+            </a>
+            <a href="#">
+                <img src="../img/c1dbce4f91e948498c7c78239b7157ac.png" alt="상영시간표">
+            </a>
+            <a href="#">
+                <img src="../img/c793af89f3b648aa99cc679186ccfa02.png" alt="discount-guide">
+            </a>
+            <a href="#">
+                <img src="../img/c0945ca778f1470db48a5a90123f2e11.png" alt="merbership">
+            </a>
+            <a href="#">
+                <img src="../img/e339dfaae8d74acfbf7b0c6987442ac8.png" alt="고객센터">
+            </a>
+            <a href="#">
+                <img src="../img/df3d477b5f0f46fc86babc5de3753636.png" alt="스페셜관">
+            </a>
+            
+            <a href="#" class="qick_top">TOP</a>
+        </div>
+    </div>
+    <div id="contents" class="contents_sale" style>
+        <div class="title_top ty2">
+            <h2 class="tit">할인안내</h2>
+            <div class="group_rgt">
+                <span class="bx_search">
+                    <input type="text" id="DiscountCardName" placeholder="카드명을 입력하세요.">
+                    <button type="button" class="btn_search" id="btn_discountcardsrch">검색</button>
+                </span>
+            </div>
+        </div>
+        <ul class="tab_wrap_lnk">
+            <li class="parent">
+                <a href="#" style="width: 25%; left: 0%;">
+                    <span>신용카드</span>
+                </a>
+                <ul>
+                    <li class="sub active">
+                        <a href="#" style="left: 0px; margin-left: 90.0938px;">
+                            <span>롯데카드</span>
+                        </a>
+                    </li>
+                    <li class="sub">
+                        <a href="#" style="left: 63px; margin-left: 90.0938px;">
+                            <span>씨티카드</span>
+                        </a>
+                    </li>
+                    <li class="sub">
+                        <a href="#" style="left: 126px; margin-left: 90.0938px;">
+                            <span>하나카드</span>
+                        </a>
+                    </li>
+                    <li class="sub">
+                        <a href="#" style="left: 189px; margin-left: 90.0938px;">
+                            <span>BC카드</span>
+                        </a>
+                    </li>
+                    <li class="sub">
+                        <a href="#" style="left: 245px; margin-left: 90.0938px;">
+                            <span>KB국민카드</span>
+                        </a>
+                    </li>
+                    <li class="sub">
+                        <a href="#" style="left: 323px; margin-left: 90.0938px;">
+                            <span>IBK카드</span>
+                        </a>
+                    </li>
+                    <li class="sub">
+                        <a href="#" style="left: 383px; margin-left: 90.0938px;">
+                            <span>NH카드</span>
+                        </a>
+                    </li>
+                    <li class="sub">
+                        <a href="#" style="left: 441px; margin-left: 90.0938px;">
+                            <span>SC카드</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="parent">
+                <a href="#" style="width: 25%; left: 25%;">
+                    <span>포인트</span>
+                </a>
+            </li>
+            <li class="parent">
+                <a href="#" style="width: 25%; left: 50%;">
+                    <span>통신사</span>
+                </a>
+            </li>
+            <li class="parent">
+                <a href="#" style="width: 25%; left: 75%;">
+                    <span>기타결제수단</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sale_card_wrap">
+            <ul class="img_list" id="card_list">
+                <li>
+                    <img src="../img/37d3662be10842099ec113e57dd6c1d5.png" alt="뉴롯데시네마포인트플러스신용카드">
+                    <dl>
+                        <dd>
+                            <span class="txt_card ty1">청구할인</span>
+                            <span class="txt_card ty2">온/오프라인</span>
+                        </dd>
+                        <dt>뉴롯데시네마포인트플러스신용카드</dt>
+                        <dd>3,5,9천원 할인</dd>
+                    </dl>
+                </li>
+                <li>
+                    <img src="../img/b08e30b5cf774d8f96714f149fee6905.png" alt="뉴롯데시네마포인트플러스체크카드">
+                    <dl>
+                        <dd>
+                            <span class="txt_card ty1">청구할인</span>
+                            <span class="txt_card ty2">온/오프라인</span>
+                        </dd>
+                        <dt>뉴롯데시네마포인트플러스체크카드</dt>
+                        <dd>3천원 할인</dd>
+                    </dl>
+                </li>
+                <li>
+                    <img src="../img/29eb9d8b3257480186229687fa879487.png" alt="369체크카드">
+                    <dl>
+                        <dd>
+                            <span class="txt_card ty3">현장할인</span>
+                        </dd>
+                        <dt>369체크카드</dt>
+                        <dd>3천원 할인</dd>
+                    </dl>
+                </li>
+                <li>
+                    <img src="../img/64eaa57a31f54106a332758d458c24c6.png" alt="경남은행 365il save 카드">
+                    <dl>
+                        <dd>
+                            <span class="txt_card ty3">현장할인</span>
+                        </dd>
+                        <dt>경남은행 365il save 카드</dt>
+                        <dd>2천원 할인</dd>
+                    </dl>
+                </li>
+                <li>
+                    <img src="../img/f7ac41c07afe49178a358168e703e51e.png" alt="대구은행 365il save카드">
+                    <dl>
+                        <dd>
+                            <span class="txt_card ty3">현장할인</span>
+                        </dd>
+                        <dt>대구은행 365il save카드</dt>
+                        <dd>1,500원 할인</dd>
+                    </dl>
+                </li>
+                <li>
+                    <img src="../img/55f814b3fcd945f089f833b290b71ba2.png" alt="대구은행 틱톡카드">
+                    <dl>
+                        <dd>
+                            <span class="txt_card ty3">현장할인</span>
+                        </dd>
+                        <dt>대구은행 틱톡카드</dt>
+                        <dd>3천원 할인</dd>
+                    </dl>
+                </li>
+                <li>
+                    <img src="../img/a668ee666c074211bec664415484c665.png" alt="대구은행 APT카드">
+                    <dl>
+                        <dd>
+                            <span class="txt_card ty3">현장할인</span>
+                        </dd>
+                        <dt>대구은행 APT카드</dt>
+                        <dd>1,500원 할인</dd>
+                    </dl>
+                </li>
+                <li>
+                    <img src="../img/c2a93d5168af44a2a28780b68df33c66.png" alt="대구은행공무원카드">
+                    <dl>
+                        <dd>
+                            <span class="txt_card ty3">현장할인</span>
+                        </dd>
+                        <dt>
+                            대구은행공무원카드
+                            <br>
+                            공무원카드
+                        </dt>
+                        <dd>3천원 할인</dd>
+                    </dl>
+                </li>
+                <li>
+                    <img src="../img/b109b6887dae4a9baecb1085e4034d19.png" alt="독서 릴레이 카드">
+                    <dl>
+                        <dd>
+                            <span class="txt_card ty3">현장할인</span>
+                        </dd>
+                        <dt>독서 릴레이 카드</dt>
+                        <dd>1,500원 할인</dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <button type="button" class="btn_txt_more">
+            <span>펼쳐보기</span>
+        </button>
+    </div>
+    <div id="banner_section" class="banner_wrap">
+        <div class="banner_01">
+            <a href="#" target>
+                <img src="../img/MisterTrot_980180.jpg" alt="모두가 열광한 그들이 온다! 미스터트롯 더 무비 절찬상영중">
+            </a>
+        </div>
+        <div id="footerBanner" class="banner_type02" style="background-color: rgb(0, 92, 185); background-image: url('../img/bg_01.jpg'); background-repeat: repeat-x; background-position: 0px 0px;">
+           <a href="#" target="_blank">
+               <img src="../img/Hyundaicard_980240.jpg" alt="금요일 토요일 5000 엠포인트 사용 그 외 2500 엠포인트">
+           </a>
+        </div>
+    </div>
+    <div id="footer_section" class="footer">
+        <div class="inner">
+            <span class="f_logo">
+                <img src="../img/logo_footer.gif" alt="LOTTE CINEMA">
+            </span>
+            <ul class="f_menu">
+                <li>
+                    <a href="#" title="회원약관" target="_self">회원약관</a>
+                </li>
+                <li>
+                    <a href="#" title="개인정보처리방침" target="_self">
+                        <strong>개인정보처리방침</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="이메일" target="_self">이메일무단수집거부</a>
+                </li>
+                <li>
+                    <a href="#" title="영상정보처리기기 운영∙관리방침" target="_self">영상정보처리기기 운영∙관리방침</a>
+                </li>
+                <li>
+                    <a href="#" title="L.POINT회원안내" target="_self">L.POINT회원안내</a>
+                </li>
+                <li>
+                    <a href="#" title="배정기준" target="_self">배정기준</a>
+                </li>
+                <li>
+                    <a href="#" title="채용안내" target="_self">채용안내</a>
+                </li>
+                <li>
+                    <a href="#" title="광고/임대문의" target="_self">광고/임대문의</a>
+                </li>
+                <li>
+                    <a href="#" title="윤리경영" target="_self">윤리경영</a>
+                </li>
+                <li>
+                    <a href="#" title="기업정보" target="_self">기업정보</a>
+                </li>
+            </ul>
+            <div class="bx_address">
+                <address>서울특별시 송파구 올림픽로 300 롯데월드타워 27층</address>
+                <span class="bar">고객센터 1544-8855</span>
+                <br>
+                <span>대표이사 기원규</span>
+                <span class="bar">사업자등록번호 313-87-00979</span>
+                <span class="bar">통신판매업신고번호 제1184호</span>
+                <span class="bar">개인정보 보호책임자 이미선</span>
+            </div>
+            <p class="copyright">COPYRIGHT© LOTTE CINEMA ALL RIGHT RESERVED.</p>
+        </div>
+        <div class="article_award">
+            <div class="inner">
+                <ul>
+                    <li>
+                        <img src="../img/footer_award_NCSI5.png" alt="NCSI / NCSI 영화관부문 5년 연속 1위">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_kcsi.png" alt="KCSI 영화관부문 7년 연속 1위(총12회)">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_kssqi.png" alt="KS-SQI 영화관부문 8년 연속 1위(총11회)">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_brandcinema.png" alt="올해의 브랜드대상 영화관 부문 10년 연속 1위">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_greenstar.png" alt="그린스타 영화관 부문 4년 연속 1위">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_brandstar.png" alt="대한민국 브랜드 스타 영화관 부문 1위">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_familyship.png" alt="가족친화 인증기업 선정">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
