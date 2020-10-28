@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOTTE CINEMA::아르떼</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://kit.fontawesome.com/20962f3e4b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/member.css">
+    <link rel="stylesheet" href="../css/movie.css">
+
+<style>
+
+</style>
+</head>
+<body>
+    <div id="loading" class="loader loader-bouncing is-active hidden"></div>
+    <div id="skip_nav_section" class="skip_nav">
+        <ul>
+            <li>
+                <a href="#">주 메뉴 바로가기</a>
+            </li>
+            <li>
+                <a href="#">본문 바로가기</a>
+            </li>
+        </ul>
+    </div>
+    <div id="header_section" class="header">
+        <h1 class="logo">
+            <a href="#">LOTTE CINEMA</a>
+        </h1>
+        <div class="gnb">
+            <ul class="g_menu1">
+                <li>
+                    <a href="http://www.facebook.com/" class="btn_facebook" target="_blank" title="롯데시네마 페이스북 새창열림">좋아요</a>
+                </li>
+                <li>
+                    <a href="http://www.youtube.com/" class="btn_youtube" target="_blank" title="새창열림">구독하기</a>
+                </li>
+            </ul>
+            <ul class="g_menu2">
+                <li>
+                    <a href="#">멤버십</a>
+                </li>
+                <li>
+                    <a href="#">고객센터</a>
+                </li>
+                <li>
+                    <a href="#">로그인</a>
+                </li>
+            </ul>
+            <ul class="g_menu3">
+                <li>
+                    <a href="#" class="btn_my">회원가입</a>
+                </li>
+                <li>
+                    <a href="#" class="btn_reserve">바로 예매</a>
+                </li>
+                <li>
+                    <button class="btn_menu_all">전체 메뉴 레이어 열기</button>
+                    <div id="allmenu"></div>
+                </li>
+            </ul>
+        </div>
+        <div id="nav">
+            <ul>
+                <li class>
+                    <a href="#">예매</a>
+                </li>
+                <li class>
+                    <a href="#">영화</a>
+                </li>
+                <li class>
+                    <a href="#">영화관</a>
+                </li>
+                <li class>
+                    <a href="#">이벤트</a>
+                </li>
+                <li class>
+                    <a href="#">스토어</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="quick_wrap" style="padding-top: 105px;">
+        <div id="quick_menu" class="quick_menu" style="top: 220px;">
+            <a href="#">
+                <img src="../img/961c9cbf311b4f1299827c21a61fab76.png" alt="예매하기">
+            </a>
+            <a href="#">
+                <img src="../img/c1dbce4f91e948498c7c78239b7157ac.png" alt="상영시간표">
+            </a>
+            <a href="#">
+                <img src="../img/c793af89f3b648aa99cc679186ccfa02.png" alt="discount-guide">
+            </a>
+            <a href="#">
+                <img src="../img/c0945ca778f1470db48a5a90123f2e11.png" alt="merbership">
+            </a>
+            <a href="#">
+                <img src="../img/e339dfaae8d74acfbf7b0c6987442ac8.png" alt="고객센터">
+            </a>
+            <a href="#">
+                <img src="../img/df3d477b5f0f46fc86babc5de3753636.png" alt="스페셜관">
+            </a>
+            
+            <a href="#" class="qick_top">TOP</a>
+        </div>
+    </div>
+    <div id="contents" class="contents_movie_list">
+        <h2 class="hidden">영화</h2>
+        <h3 class="hidden">아르떼</h3>
+        <div class="movi_arte_list">
+            <h4 class="hidden">영화 목록</h4>
+            <ul class="movie_list">
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/16453_103_1.jpg' alt="페뷸러스">
+                            <span class="ic_grade gr_15"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">페뷸러스</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.1%</em>
+                            </span>
+                            <span class="remain_info">D-8</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img//16377_103_1.jpg' alt="교실 안의 야크">
+                            <span class="ic_grade gr_all"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">교실 안의 야크</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.1%</em>
+                            </span>
+                            <span class="star_info">9.3</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/16468_103_1.jpg' alt="마틴 에덴">
+                            <span class="ic_grade gr_12"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">마틴 에덴</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.1%</em>
+                            </span>
+                            <span class="remain_info">D-1</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/15558_103_1.jpg' alt="밥정">
+                            <span class="ic_grade gr_all"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">밥정</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.1%</em>
+                            </span>
+                            <span class="star_info">9.4</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/16420_103_1.jpg' alt="남과 여: 여전히 찬란한">
+                            <span class="ic_grade gr_15"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">남과 여: 여전히 찬란한</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.0%</em>
+                            </span>
+                            <span class="star_info">8.1</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/10316_103_1.jpg' alt="불의 전차">
+                            <span class="ic_grade gr_12"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">불의 전차</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.0%</em>
+                            </span>
+                            <span class="remain_info">D-1</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/16446_103_1.jpg' alt="태양의 소녀들">
+                            <span class="ic_grade gr_15"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">태양의 소녀들</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.0%</em>
+                            </span>
+                            <span class="star_info">8.8</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/16474_103_1.jpg' alt="황무지 5월의 고해">
+                            <span class="ic_grade gr_15"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">황무지 5월의 고해</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.0%</em>
+                            </span>
+                            <span class="star_info">0</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/16450_103_1.jpg' alt="프록시마 프로젝트">
+                            <span class="ic_grade gr_12"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">프록시마 프로젝트</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.0%</em>
+                            </span>
+                            <span class="star_info">8.4</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/16424_103_1.jpg' alt="베이비티스">
+                            <span class="ic_grade gr_15"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">베이비티스</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.0%</em>
+                            </span>
+                            <span class="star_info">7.9</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/16537_103_1.jpg' alt="디어 마이 지니어스">
+                            <span class="ic_grade gr_all"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">디어 마이 지니어스</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.0%</em>
+                            </span>
+                            <span class="star_info">0</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/16521_103_1.jpg' alt="알피니스트 - 어느 카메라맨의 고백">
+                            <span class="ic_grade gr_12"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">알피니스트 - 어느 카메라맨의 고백</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.0%</em>
+                            </span>
+                            <span class="star_info">8.3</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/16518_103_1.jpg' alt="웰컴 투 X-월드">
+                            <span class="ic_grade gr_all"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">웰컴 투 X-월드</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.0%</em>
+                            </span>
+                            <span class="remain_info">D-1</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/16556_103_1.jpg' alt="구직자들">
+                            <span class="ic_grade gr_all"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">구직자들</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.0%</em>
+                            </span>
+                            <span class="remain_info">D-15</span>
+                        </span>
+                    </div>
+                </li>
+                <li class>
+                    <div class="top_info">
+                        <span class="poster_info">
+                            <img src='../img/16451_103_1.jpg' alt="증발">
+                            <span class="ic_grade gr_all"></span>
+                        </span>
+                    </div>
+                    <div class="btm_info">
+                        <strong class="tit_info">증발</strong>
+                        <span class="sub_info1">
+                            <span class="rate_info">
+                                예매율<em>0.4%</em>
+                            </span>
+                            <span class="remain_info">D-15</span>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+            <button type="button" class="btn_txt_more">
+                <span>펼쳐보기</span>
+            </button>
+        </div>
+    </div>
+    <div id="banner_section" class="banner_wrap">
+        <div class="banner_01">
+            <a href="#" target>
+                <img src="../img/Kingdom_980180.jpg" alt="킹덤오브헤븐 디렉터스컷 2020.11.11 전세계 최초 개봉">
+            </a>
+        </div>
+        <div id="footerBanner" class="banner_type02" style="background-color: rgb(255, 194, 76); background-image: url('../img/bg_01.jpg'); background-repeat: repeat-x; background-position: 0px 0px;">
+           <a href="#" target="_blank">
+               <img src="../img/Lottecard_980240.png" alt="롤라가 드리는 최대 10만원 캐시백 1억원 다이아몬드 당첨의 기회까지">
+           </a>
+        </div>
+    </div>
+    <div id="footer_section" class="footer">
+        <div class="inner">
+            <span class="f_logo">
+                <img src="../img/logo_footer.gif" alt="LOTTE CINEMA">
+            </span>
+            <ul class="f_menu">
+                <li>
+                    <a href="#" title="회원약관" target="_self">회원약관</a>
+                </li>
+                <li>
+                    <a href="#" title="개인정보처리방침" target="_self">
+                        <strong>개인정보처리방침</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" title="이메일" target="_self">이메일무단수집거부</a>
+                </li>
+                <li>
+                    <a href="#" title="영상정보처리기기 운영∙관리방침" target="_self">영상정보처리기기 운영∙관리방침</a>
+                </li>
+                <li>
+                    <a href="#" title="L.POINT회원안내" target="_self">L.POINT회원안내</a>
+                </li>
+                <li>
+                    <a href="#" title="배정기준" target="_self">배정기준</a>
+                </li>
+                <li>
+                    <a href="#" title="채용안내" target="_self">채용안내</a>
+                </li>
+                <li>
+                    <a href="#" title="광고/임대문의" target="_self">광고/임대문의</a>
+                </li>
+                <li>
+                    <a href="#" title="윤리경영" target="_self">윤리경영</a>
+                </li>
+                <li>
+                    <a href="#" title="기업정보" target="_self">기업정보</a>
+                </li>
+            </ul>
+            <div class="bx_address">
+                <address>서울특별시 송파구 올림픽로 300 롯데월드타워 27층</address>
+                <span class="bar">고객센터 1544-8855</span>
+                <br>
+                <span>대표이사 기원규</span>
+                <span class="bar">사업자등록번호 313-87-00979</span>
+                <span class="bar">통신판매업신고번호 제1184호</span>
+                <span class="bar">개인정보 보호책임자 이미선</span>
+            </div>
+            <p class="copyright">COPYRIGHT© LOTTE CINEMA ALL RIGHT RESERVED.</p>
+        </div>
+        <div class="article_award">
+            <div class="inner">
+                <ul>
+                    <li>
+                        <img src="../img/footer_award_NCSI5.png" alt="NCSI / NCSI 영화관부문 5년 연속 1위">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_kcsi.png" alt="KCSI 영화관부문 7년 연속 1위(총12회)">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_kssqi.png" alt="KS-SQI 영화관부문 8년 연속 1위(총11회)">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_brandcinema.png" alt="올해의 브랜드대상 영화관 부문 10년 연속 1위">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_greenstar.png" alt="그린스타 영화관 부문 4년 연속 1위">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_brandstar.png" alt="대한민국 브랜드 스타 영화관 부문 1위">
+                    </li>
+                    <li>
+                        <img src="../img/footer_award_familyship.png" alt="가족친화 인증기업 선정">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

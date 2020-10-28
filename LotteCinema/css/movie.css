@@ -356,3 +356,16 @@
 .exhibition_list .movi_box {
   background: url("../img/bg_exhib_03-1.png") no-repeat 0 0;
 }
+
+/* movie - arte */
+.movi_arte_list ul li {
+  margin-bottom: 42px;
+}
+
+/* movie - opera */
+.opera_visual_con {
+  position: relative;
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+  background: #000;
+}
